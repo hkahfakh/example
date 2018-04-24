@@ -14,14 +14,14 @@ BOT_NAME = 'example'
 SPIDER_MODULES = ['example.spiders']
 NEWSPIDER_MODULE = 'example.spiders'
 
-'''ITEM_PIPELINES = {
+ITEM_PIPELINES = {
     'example.pipelines.ExamplePipeline': 1,
-}'''
+}
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'example (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -42,14 +42,14 @@ ROBOTSTXT_OBEY = True
 
 # Override the default request headers:
 DEFAULT_REQUEST_HEADERS = {
-    'accept':' */*',
+    'accept':' text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
 #'accept-Encoding': 'gzip, deflate'
     'accept-Language': 'en-US,en;q=0.9',
     'Connection': 'keep-alive',
-    'Cookie': 'ganji_uuid=8368597173435798581106; _gl_tracker=%7B%22ca_source%22%3A%22www.google.com%22%2C%22ca_name%22%3A%22-%22%2C%22ca_kw%22%3A%22-%22%2C%22ca_id%22%3A%22-%22%2C%22ca_s%22%3A%22seo_google%22%2C%22ca_n%22%3A%22-%22%2C%22ca_i%22%3A%22-%22%2C%22sid%22%3A51385904000%7D; ganji_xuuid=a3cabcbb-7419-4706-9817-3c81ea3daaa6.1523513790455; citydomain=bj; _wap__utmganji_wap_caInfo_V2=%7B%22ca_name%22%3A%22-%22%2C%22ca_source%22%3A%22-%22%2C%22ca_id%22%3A%22-%22%2C%22ca_kw%22%3A%22-%22%7D; GANJISESSID=gbbjtgv1edb1mt5v4nnjheifov; gj_footprint=%5B%5B%22%5Cu79df%5Cu623f%22%2C%22http%3A%5C%2F%5C%2Fbj.ganji.com%5C%2Ffang1%5C%2F%22%5D%5D; lg=1; xxzl_deviceid=PmxAP0CWE2f1Im44e4Vyl7%2ByXXKewo%2F6Rs%2BqroFUi8hVVTZ5Rb5tdp85EMkMbWLW; ershoufangABTest=A; STA_DS=0',
+    'Cookie': 'GANJISESSID=u4si9meklqmmdm64vt8stvfr22; gj_footprint=%5B%5B%22%5Cu79df%5Cu623f%22%2C%22http%3A%5C%2F%5C%2Fbj.ganji.com%5C%2Ffang1%5C%2F%22%5D%5D; lg=1; ganji_uuid=8388510037588346592632; _gl_tracker=%7B%22ca_source%22%3A%22-%22%2C%22ca_name%22%3A%22-%22%2C%22ca_kw%22%3A%22-%22%2C%22ca_id%22%3A%22-%22%2C%22ca_s%22%3A%22self%22%2C%22ca_n%22%3A%22-%22%2C%22ca_i%22%3A%22-%22%2C%22sid%22%3A65505976122%7D; ganji_xuuid=1af42be8-eb65-4612-f18f-d6e23f87c714.1523873506159; __utmc=32156897; xxzl_deviceid=jao7FNpuH98npTEHRjTB%2F0kV4urUtDMfgkJwBUOhlJzztmKXw4gDzUYmZP3V4f8y; ershoufangABTest=B; ganji_fang_fzp_pc=1; ganji_login_act=1524462561825; __utma=32156897.323960893.1523873506.1524458438.1524462564.16; __utmz=32156897.1524462564.16.5.utmcsr=bj.ganji.com|utmccn=(referral)|utmcmd=referral|utmcct=/fang1/o10/; __utmt=1; __utmb=32156897.1.10.1524462564',
     'Host': 'cdata.ganji.com',
     'referer': 'http://bj.ganji.com/fang1/',
-    'user-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+    'user-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36 OPR/26.0.1656.60',
 }
 
 # Enable or disable spider middlewares

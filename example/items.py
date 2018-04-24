@@ -13,4 +13,6 @@ class ExampleItem(scrapy.Item):
     title = scrapy.Field()
     url = scrapy.Field()
     price = scrapy.Field()
-    
+    area = scrapy.Field()
+    rent = scrapy.Field()
+    next_page = scrapy.Field()
