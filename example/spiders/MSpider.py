@@ -9,7 +9,8 @@ class MSpider(scrapy.Spider):
     #设定域名
     allowed_domains = ["bj.ganji.com"]
     #填写爬取地址
-    start_urls = ["http://bj.ganji.com/fang1/"]
+    start_urls = ["http://bj.ganji.com/fang1/","http://bj.ganji.com/fang1/o2"]
+
     #编写爬取方法
     def parse(self, response):
 
@@ -17,8 +18,8 @@ class MSpider(scrapy.Spider):
             f.write(response.body)
 
         item = ExampleItem()
-        print('aaaaaa')
-        item['next_page'] = response.css('div.pageBox')[1].xpath('.//a[@class="next"]/@href').extract()
+        '''print('aaaaaa')
+        item['next_page'] = response.css('div.pageBox')[1].xpath('.//a[@class="next"]/@href').extract_first()'''
         yield item
         for box in response.xpath('//div[@class="f-list-item ershoufang-list"]'):
             #获取每个div中的课程路径
@@ -36,10 +37,11 @@ class MSpider(scrapy.Spider):
 
             yield item
 
-        next_page = response.css('div.pageBox')[1].xpath('.//a[@class="next"]/@href').extract()
+        next_page =  'http://bj.ganji.com' + response.css('div.pageBox')[1].xpath('.//a[@class="next"]/@href').extract_first()
+        #print(next_page)
         if next_page is not None:
             next_page = response.urljoin(next_page)
-            yield scrapy.Request(next_page, callback=self.parse)
+            yield scrapy.Request(next_page, callback=self.parse,headers={'referer':next_page})
 
 class MSpider1(scrapy.Spider):
     name = "MySpider1"
